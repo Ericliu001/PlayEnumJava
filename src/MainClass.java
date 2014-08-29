@@ -1,4 +1,5 @@
 import java.util.EnumMap;
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -65,8 +66,20 @@ public class MainClass {
 
 		useEnumMap();
 		
+		useEnumSet();
+		
 		
 		map2.put(WeekDay.MONDAY, "gOOD");
+	}
+
+	private static void useEnumSet() {
+		EnumSet<WeekDay> set1
+		   = EnumSet.allOf(WeekDay.class);
+		System.out.println("All members of set1: " +set1);
+		
+		EnumSet<WeekDay> set2 = EnumSet.of(WeekDay.MONDAY, WeekDay.TUESDAY);
+		
+		System.out.println("Members in set1 but not in set2: " + set1.complementOf(set2));
 	}
 
 	private static void useValues() {
